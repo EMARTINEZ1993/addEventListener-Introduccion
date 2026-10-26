@@ -1,0 +1,28 @@
+EVENTOS-JS
+==========
+
+Proyecto de práctica: eventos en JavaScript con addEventListener(),
+estructuras condicionales y validaciones.
+
+Cómo abrirlo
+------------
+1. Abre la carpeta eventos-js en Visual Studio Code (Archivo > Abrir carpeta).
+2. Clic derecho sobre index.html > Open with Live Server,
+   o doble clic sobre index.html desde la carpeta.
+
+Contenido
+---------
+index.html            Menú con enlaces a todos los ejercicios.
+css/style.css         Estilos compartidos por todas las páginas.
+ejercicios/           Ejercicios guiados 1 a 4 (resueltos).
+taller/               Páginas del taller 1 a 5 (formularios listos).
+js/ejercicioN.js      Código de los ejercicios guiados (resuelto).
+js/tallerN.js         Plantillas del taller: completa los pasos 3, 4 y 5.
+
+Reglas del taller
+-----------------
+- Escucha el evento submit y usa event.preventDefault().
+- Los formularios llevan novalidate: valida todo con if.
+- No uses alert(): muestra los mensajes en <p id="resultado">
+  con la clase "mensaje error" o "mensaje exito".
+- Usa return después de cada error.

@@ -1,0 +1,756 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Proyecto Eventos JS</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+
+<header class="cabecera gutter">
+  <div class="ancho">
+    <span class="marca"><b>JS</b> Eventos · Condicionales · Validaciones</span>
+    <h1>Proyecto eventos-js, paso a paso</h1>
+    <p>Organiza un proyecto con carpetas para HTML, CSS y JavaScript, construye cuatro ejercicios guiados, cada uno en su propio archivo, y resuelve un taller de cinco ejercicios con estructuras condicionales y validaciones.</p>
+    <details class="indice">
+      <summary>Contenido (16 pasos)</summary>
+      <ol><li><button type="button" data-ir="0"><span class="num">1</span>Qué vamos a construir</button></li><li><button type="button" data-ir="1"><span class="num">2</span>Preparar el entorno</button></li><li><button type="button" data-ir="2"><span class="num">3</span>Crear la estructura de carpetas</button></li><li><button type="button" data-ir="3"><span class="num">4</span>La hoja de estilos compartida</button></li><li><button type="button" data-ir="4"><span class="num">5</span>La página de inicio</button></li><li><button type="button" data-ir="5"><span class="num">6</span>Ejercicio 1: la primera página con su script</button></li><li><button type="button" data-ir="6"><span class="num">7</span>Ejercicios 2, 3 y 4</button></li><li><button type="button" data-ir="7"><span class="num">8</span>Probar y corregir errores</button></li><li><button type="button" data-ir="8"><span class="num">9</span>Herramientas para el taller</button></li><li><button type="button" data-ir="9"><span class="num">10</span>Plantilla base del taller</button></li><li><button type="button" data-ir="10"><span class="num">11</span>Taller 1: Par o impar</button></li><li><button type="button" data-ir="11"><span class="num">12</span>Taller 2: Clasificar una nota</button></li><li><button type="button" data-ir="12"><span class="num">13</span>Taller 3: El mayor de tres números</button></li><li><button type="button" data-ir="13"><span class="num">14</span>Taller 4: Formulario de registro</button></li><li><button type="button" data-ir="14"><span class="num">15</span>Taller 5: Calculadora con selector</button></li><li><button type="button" data-ir="15"><span class="num">16</span>Lista de verificación</button></li></ol>
+    </details>
+  </div>
+</header>
+
+<div class="barra gutter" aria-live="polite">
+  <div class="ancho barra-fila">
+    <span class="contador" id="contador">Paso 1 de 16</span>
+    <span class="actual" id="actual"></span>
+  </div>
+</div>
+<div class="progreso"><span id="progreso"></span></div>
+
+<main class="gutter">
+  <div class="ancho">
+    <section class="paso guia" id="paso-1" data-titulo="Qué vamos a construir"><p class="eyebrow">Paso 1 de 16 · Guía</p><h2>Qué vamos a construir</h2>
+<p class="lead">Vas a organizar un proyecto web real a partir de los cuatro ejemplos de la guía de <code>addEventListener()</code>. En lugar de tener todo en un solo archivo, cada ejercicio tendrá su propia página HTML y su propio archivo JavaScript, y todas compartirán una sola hoja de estilos.</p>
+<h3>Resultado esperado</h3>
+<ul>
+<li>Una página de inicio (<code>index.html</code>) con un menú que abre cada ejercicio.</li>
+<li>Cuatro ejercicios guiados: sumar, restar, multiplicar y dividir.</li>
+<li>Un taller de cinco ejercicios con estructuras condicionales y validaciones, que resolverás tú.</li>
+</ul>
+<h3>Antes de empezar debes saber</h3>
+<ul>
+<li>Crear un formulario HTML con <code>&lt;label&gt;</code> e <code>&lt;input&gt;</code>.</li>
+<li>Qué hacen <code>addEventListener()</code>, <code>event.preventDefault()</code> y <code>Number()</code> (guía anterior).</li>
+</ul>
+<div class="nota info"><p><strong>Cómo usar esta guía:</strong> Cada paso produce algo concreto. No pases al siguiente hasta que la prueba del paso funcione.</p></div>
+</section>
+<section class="paso guia" id="paso-2" data-titulo="Preparar el entorno"><p class="eyebrow">Paso 2 de 16 · Guía</p><h2>Preparar el entorno</h2>
+<p>Necesitas tres herramientas. Todas son gratuitas.</p>
+<div class="tabla"><table><thead><tr><th>Herramienta</th><th>Para qué sirve</th></tr></thead><tbody><tr><td><strong>Visual Studio Code</strong></td><td>Editor donde crearás carpetas y archivos.</td></tr><tr><td><strong>Extensión Live Server</strong> (opcional)</td><td>Abre el proyecto en el navegador y lo recarga al guardar.</td></tr><tr><td><strong>Navegador</strong> (Chrome, Edge o Firefox)</td><td>Para ver las páginas y usar la consola con <kbd>F12</kbd>.</td></tr></tbody></table></div>
+<h3>Crear la carpeta del proyecto</h3>
+<ol class="pasos-cortos">
+<li>En Documentos (o donde guardes tus trabajos) crea una carpeta llamada <code>eventos-js</code>.</li>
+<li>Abre Visual Studio Code y elige <strong>Archivo → Abrir carpeta…</strong></li>
+<li>Selecciona <code>eventos-js</code>. Su nombre aparecerá en el panel <strong>Explorador</strong>, a la izquierda.</li>
+</ol>
+<div class="nota alerta"><p><strong>Importante:</strong> Abre siempre la carpeta completa, no un archivo suelto. Así VS Code muestra todo el proyecto y Live Server encuentra las rutas.</p></div>
+<div class="probar"><span class="etq">Cómo probarlo</span><p>El panel Explorador muestra <code>EVENTOS-JS</code> y está vacío.</p></div>
+</section>
+<section class="paso guia" id="paso-3" data-titulo="Crear la estructura de carpetas"><p class="eyebrow">Paso 3 de 16 · Guía</p><h2>Crear la estructura de carpetas</h2>
+<p>Este es el proyecto completo. Cada tipo de archivo vive en su propia carpeta:</p>
+<pre class="arbol">eventos-js/
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   ├── ejercicio1.js
+│   ├── ejercicio2.js
+│   ├── ejercicio3.js
+│   ├── ejercicio4.js
+│   ├── taller1.js
+│   ├── taller2.js
+│   ├── taller3.js
+│   ├── taller4.js
+│   └── taller5.js
+├── ejercicios/
+│   ├── ejercicio1.html
+│   ├── ejercicio2.html
+│   ├── ejercicio3.html
+│   └── ejercicio4.html
+└── taller/
+    ├── taller1.html
+    ├── taller2.html
+    ├── taller3.html
+    ├── taller4.html
+    └── taller5.html</pre>
+<div class="tabla"><table><thead><tr><th>Carpeta o archivo</th><th>Contenido</th></tr></thead><tbody><tr><td><code>index.html</code></td><td>Página de inicio con el menú. Está en la raíz del proyecto.</td></tr><tr><td><code>css/</code></td><td>La hoja de estilos que comparten todas las páginas.</td></tr><tr><td><code>js/</code></td><td>Un archivo JavaScript por ejercicio.</td></tr><tr><td><code>ejercicios/</code></td><td>Las páginas HTML de los cuatro ejercicios guiados.</td></tr><tr><td><code>taller/</code></td><td>Las páginas HTML de los cinco ejercicios del taller.</td></tr></tbody></table></div>
+<h3>¿Por qué separar?</h3>
+<ul>
+<li><strong>HTML</strong> define la estructura, <strong>CSS</strong> la presentación y <strong>JavaScript</strong> el comportamiento. Separados son más fáciles de leer y de corregir.</li>
+<li><strong>Un archivo por ejercicio:</strong> cuando todo estaba en un solo <code>&lt;script&gt;</code>, un error en el ejemplo 1 detenía también los ejemplos 2, 3 y 4. Ahora un error solo afecta a su propia página.</li>
+<li>Las variables de un archivo no chocan con las de otro, porque cada página carga solo su script.</li>
+</ul>
+<h3>Cómo crearla en VS Code</h3>
+<ol class="pasos-cortos">
+<li>En el Explorador, pasa el mouse sobre <code>EVENTOS-JS</code> y usa el ícono <strong>Nueva carpeta</strong> para crear <code>css</code>, <code>js</code>, <code>ejercicios</code> y <code>taller</code>.</li>
+<li>Con el ícono <strong>Nuevo archivo</strong> crea <code>index.html</code> en la raíz.</li>
+<li>Para crear un archivo dentro de una carpeta, haz clic en la carpeta y luego en <strong>Nuevo archivo</strong>. También puedes escribir la ruta completa, por ejemplo <code>css/style.css</code>.</li>
+</ol>
+<div class="nota alerta"><p><strong>Reglas para los nombres:</strong> Usa minúsculas, sin espacios, sin tildes y sin ñ: <code>ejercicio1.html</code>, no <code>Ejercicio 1.html</code>. Un nombre distinto en una sola letra rompe la ruta.</p></div>
+<details class="opcional"><summary>Opcional: crearla desde la terminal (Git Bash, macOS o Linux)</summary>
+<figure class="codigo"><figcaption><span class="ruta sin">fragmento</span><button type="button" class="copiar">Copiar</button></figcaption><pre><code>mkdir css js ejercicios taller
+touch index.html css/style.css
+touch js/ejercicio1.js js/ejercicio2.js js/ejercicio3.js js/ejercicio4.js
+touch ejercicios/ejercicio1.html ejercicios/ejercicio2.html ejercicios/ejercicio3.html ejercicios/ejercicio4.html</code></pre></figure>
+<p>Ejecuta estos comandos dentro de la carpeta <code>eventos-js</code>. <code>touch</code> no existe en CMD ni en PowerShell de Windows; allí crea los archivos desde VS Code. Los archivos del taller los crearás en el paso 10.</p>
+</details>
+<div class="probar"><span class="etq">Cómo probarlo</span><p>Compara tu Explorador con el árbol de arriba. Por ahora deben existir las carpetas, <code>index.html</code>, <code>css/style.css</code> y los archivos de los ejercicios 1 a 4.</p></div>
+</section>
+<section class="paso guia" id="paso-4" data-titulo="La hoja de estilos compartida"><p class="eyebrow">Paso 4 de 16 · Guía</p><h2>La hoja de estilos compartida</h2>
+<p>Escribe los estilos una sola vez. Todas las páginas los usarán enlazando este archivo.</p>
+<figure class="codigo"><figcaption><span class="ruta">css/style.css</span><button type="button" class="copiar">Copiar</button></figcaption><pre><code>/* Estilos compartidos por todas las páginas del proyecto */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #1f2933;
+    line-height: 1.5;
+}
+
+/* Encabezado */
+header {
+    background-color: #1e3a5f;
+    color: #ffffff;
+    padding: 24px 16px;
+}
+
+header h1 {
+    margin: 8px 0;
+}
+
+header a {
+    color: #ffd166;
+}
+
+/* Contenido principal centrado */
+main {
+    max-width: 560px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+/* Formularios */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #d5dbe1;
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    font-size: 16px;
+    border: 1px solid #9aa5b1;
+    border-radius: 4px;
+}
+
+.botones {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.botones input {
+    width: auto;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    background-color: #1e3a5f;
+    color: #ffffff;
+    border: none;
+}
+
+/* Menú de la página de inicio */
+.menu li {
+    margin-bottom: 8px;
+}
+
+/* Mensajes del taller */
+.mensaje {
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.mensaje:empty {
+    display: none;
+}
+
+.exito {
+    background-color: #e3f6e8;
+    color: #1b5e20;
+}
+
+.error {
+    background-color: #fdecea;
+    color: #8a1c1c;
+}</code></pre></figure>
+<h3>Qué hace cada parte</h3>
+<ul>
+<li><code>box-sizing: border-box</code> hace que el ancho de un elemento incluya su relleno y su borde. Así los inputs con <code>width: 100%</code> no se salen del formulario.</li>
+<li><code>main</code> limita el ancho del contenido a 560&nbsp;px y lo centra con <code>margin: 24px auto</code>.</li>
+<li><code>.botones input</code> anula el ancho del 100&nbsp;% solo para los botones.</li>
+<li>Las clases <code>.mensaje</code>, <code>.exito</code> y <code>.error</code> se usarán en el taller. <code>.mensaje:empty</code> oculta el párrafo mientras no tenga texto.</li>
+</ul>
+<div class="probar"><span class="etq">Cómo probarlo</span><p>Todavía no se ve nada. Comprobarás este archivo en el paso 5, cuando una página lo enlace.</p></div>
+</section>
+<section class="paso guia" id="paso-5" data-titulo="La página de inicio"><p class="eyebrow">Paso 5 de 16 · Guía</p><h2>La página de inicio</h2>
+<p>La página de inicio es el menú del proyecto. Desde ella se abren los nueve ejercicios.</p>
+<figure class="codigo"><figcaption><span class="ruta">index.html</span><button type="button" class="copiar">Copiar</button></figcaption><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Eventos en JavaScript&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Eventos en JavaScript&lt;/h1&gt;
+        &lt;p&gt;Ejercicios con addEventListener(), condicionales y validaciones.&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;h2&gt;Ejercicios guiados&lt;/h2&gt;
+        &lt;ul class="menu"&gt;
+            &lt;li&gt;&lt;a href="ejercicios/ejercicio1.html"&gt;Ejercicio 1: Sumar (click, función anónima)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="ejercicios/ejercicio2.html"&gt;Ejercicio 2: Restar (click, función con nombre)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="ejercicios/ejercicio3.html"&gt;Ejercicio 3: Multiplicar (submit, función anónima)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="ejercicios/ejercicio4.html"&gt;Ejercicio 4: Dividir (submit, función con nombre)&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;h2&gt;Taller&lt;/h2&gt;
+        &lt;ul class="menu"&gt;
+            &lt;li&gt;&lt;a href="taller/taller1.html"&gt;Taller 1: Par o impar&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="taller/taller2.html"&gt;Taller 2: Clasificar una nota&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="taller/taller3.html"&gt;Taller 3: El mayor de tres números&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="taller/taller4.html"&gt;Taller 4: Formulario de registro&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="taller/taller5.html"&gt;Taller 5: Calculadora con selector&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></figure>
+<h3>Rutas relativas desde la raíz</h3>
+<p><code>index.html</code> está en la raíz del proyecto, al mismo nivel que las carpetas. Por eso escribe la ruta entrando directamente en la carpeta:</p>
+<ul>
+<li><code>href="css/style.css"</code>: entra a <code>css</code> y abre <code>style.css</code>.</li>
+<li><code>href="ejercicios/ejercicio1.html"</code>: entra a <code>ejercicios</code> y abre la página.</li>
+</ul>
+<div class="probar"><span class="etq">Cómo probarlo</span><p>Clic derecho sobre <code>index.html</code> → <strong>Open with Live Server</strong> (o doble clic en el archivo desde la carpeta). Debes ver el encabezado azul oscuro y el texto con la fuente Arial. Si la página se ve en Times New Roman y sin colores, la ruta del CSS está mal escrita.</p></div>
+<div class="nota info"><p>Los enlaces del taller mostrarán un error «no encontrado» hasta que crees esos archivos en el paso 10. Es normal.</p></div>
+</section>
+<section class="paso guia" id="paso-6" data-titulo="Ejercicio 1: la primera página con su script"><p class="eyebrow">Paso 6 de 16 · Guía</p><h2>Ejercicio 1: la primera página con su script</h2>
+<p>Este ejercicio es el modelo que repetirás en todos los demás: una página HTML en <code>ejercicios/</code> y su script en <code>js/</code>.</p>
+<figure class="codigo"><figcaption><span class="ruta">ejercicios/ejercicio1.html</span><button type="button" class="copiar">Copiar</button></figcaption><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Ejercicio 1: Sumar dos números&lt;/title&gt;
+    &lt;link rel="stylesheet" href="../css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;a href="../index.html"&gt;&amp;larr; Volver al inicio&lt;/a&gt;
+        &lt;h1&gt;Ejercicio 1: Sumar dos números&lt;/h1&gt;
+        &lt;p&gt;Evento click del botón con una función anónima.&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;form action=""&gt;
+            &lt;label for="n1"&gt;Número 1:&lt;/label&gt;
+            &lt;input type="number" id="n1" step="any" required&gt;
+
+            &lt;label for="n2"&gt;Número 2:&lt;/label&gt;
+            &lt;input type="number" id="n2" step="any" required&gt;
+
+            &lt;div class="botones"&gt;
+                &lt;input type="submit" value="Aceptar" id="botonSumar"&gt;
+                &lt;input type="reset" value="Cancelar"&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/main&gt;
+
+    &lt;script src="../js/ejercicio1.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></figure>
+<figure class="codigo protegido"><figcaption><span class="ruta">js/ejercicio1.js</span><span class="sin-copia">Escríbelo tú</span></figcaption><pre><code>// EJERCICIO 1: función anónima con el evento click.
+
+// Seleccionamos el botón por su id y registramos la función
+// que se ejecutará cuando el usuario haga clic.
+document.getElementById("botonSumar").addEventListener("click", function (event) {
+
+    // Evitamos que el formulario se envíe y recargue la página.
+    event.preventDefault();
+
+    // Obtenemos los valores escritos en los campos (llegan como texto).
+    let valor1 = document.getElementById("n1").value;
+    let valor2 = document.getElementById("n2").value;
+
+    // Al escuchar el clic, required no valida: revisamos los vacíos con if.
+    if (valor1 === "" || valor2 === "") {
+        alert("Escribe los dos números.");
+        return;
+    }
+
+    // Convertimos el texto a número y mostramos la suma.
+    let n1 = Number(valor1);
+    let n2 = Number(valor2);
+
+    alert(`Suma: ${n1 + n2}`);
+});</code></pre></figure>
+<h3>Rutas con <code>../</code></h3>
+<p><code>ejercicio1.html</code> está <strong>dentro</strong> de la carpeta <code>ejercicios</code>. Para llegar a <code>css</code> o a <code>js</code> primero hay que salir de ella. <code>../</code> significa «sube una carpeta».</p>
+<div class="tabla"><table><thead><tr><th>Ruta en ejercicio1.html</th><th>Recorrido</th></tr></thead><tbody><tr><td><code>../css/style.css</code></td><td>Sale de <code>ejercicios</code> → entra a <code>css</code> → <code>style.css</code></td></tr><tr><td><code>../js/ejercicio1.js</code></td><td>Sale de <code>ejercicios</code> → entra a <code>js</code> → <code>ejercicio1.js</code></td></tr><tr><td><code>../index.html</code></td><td>Sale de <code>ejercicios</code> → <code>index.html</code> en la raíz</td></tr></tbody></table></div>
+<h3>¿Por qué el script va al final del <code>&lt;body&gt;</code>?</h3>
+<p>El navegador lee el HTML de arriba hacia abajo. Si el script se carga antes del formulario, <code>getElementById("botonSumar")</code> devuelve <code>null</code> porque el botón todavía no existe, y aparece el error <code>Cannot read properties of null</code>. Al final del <code>&lt;body&gt;</code>, todos los elementos ya están creados.</p>
+<div class="probar"><span class="etq">Cómo probarlo</span><p>Abre el inicio y entra al Ejercicio 1. Escribe 8 y 4: debe aparecer «Suma: 12». Deja un campo vacío: debe aparecer «Escribe los dos números.». Usa el enlace «Volver al inicio» para regresar.</p></div>
+</section>
+<section class="paso guia" id="paso-7" data-titulo="Ejercicios 2, 3 y 4"><p class="eyebrow">Paso 7 de 16 · Guía</p><h2>Ejercicios 2, 3 y 4</h2>
+<p>Las tres páginas siguen el mismo modelo del ejercicio 1. Puedes copiar <code>ejercicio1.html</code> y cambiar solo lo que indica la tabla, o copiar los archivos completos que están abajo.</p>
+<div class="tabla"><table><thead><tr><th>Ejercicio</th><th>Título y &lt;h1&gt;</th><th>ids de los campos</th><th>id en</th><th>Script</th></tr></thead><tbody><tr><td>2</td><td>Restar dos números</td><td><code>num1</code>, <code>num2</code></td><td>botón: <code>botonRestar</code></td><td><code>../js/ejercicio2.js</code></td></tr><tr><td>3</td><td>Multiplicar dos números</td><td><code>numero1</code>, <code>numero2</code></td><td>formulario: <code>formulario</code></td><td><code>../js/ejercicio3.js</code></td></tr><tr><td>4</td><td>Dividir dos números</td><td><code>numero11</code>, <code>numero21</code></td><td>formulario: <code>formularioDividir</code></td><td><code>../js/ejercicio4.js</code></td></tr></tbody></table></div>
+<div class="nota info"><p><strong>Fíjate:</strong> En los ejercicios 3 y 4 el <code>id</code> pasa del botón al <code>&lt;form&gt;</code>, porque se escucha el evento <code>submit</code> del formulario.</p></div>
+<div class="pestanas" role="tablist" aria-label="Ejercicios">
+<button type="button" role="tab" aria-selected="true" data-tab="e2">Ejercicio 2</button>
+<button type="button" role="tab" aria-selected="false" data-tab="e3">Ejercicio 3</button>
+<button type="button" role="tab" aria-selected="false" data-tab="e4">Ejercicio 4</button>
+</div>
+<div class="panel" data-panel="e2">
+<h3>Ejercicio 2: Restar (click, función con nombre)</h3>
+<figure class="codigo"><figcaption><span class="ruta">ejercicios/ejercicio2.html</span><button type="button" class="copiar">Copiar</button></figcaption><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Ejercicio 2: Restar dos números&lt;/title&gt;
+    &lt;link rel="stylesheet" href="../css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;a href="../index.html"&gt;&amp;larr; Volver al inicio&lt;/a&gt;
+        &lt;h1&gt;Ejercicio 2: Restar dos números&lt;/h1&gt;
+        &lt;p&gt;Evento click del botón con una función con nombre.&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;form action=""&gt;
+            &lt;label for="num1"&gt;Número 1:&lt;/label&gt;
+            &lt;input type="number" id="num1" step="any" required&gt;
+
+            &lt;label for="num2"&gt;Número 2:&lt;/label&gt;
+            &lt;input type="number" id="num2" step="any" required&gt;
+
+            &lt;div class="botones"&gt;
+                &lt;input type="submit" value="Aceptar" id="botonRestar"&gt;
+                &lt;input type="reset" value="Cancelar"&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/main&gt;
+
+    &lt;script src="../js/ejercicio2.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></figure>
+<figure class="codigo protegido"><figcaption><span class="ruta">js/ejercicio2.js</span><span class="sin-copia">Escríbelo tú</span></figcaption><pre><code>// EJERCICIO 2: función con nombre con el evento click.
+
+// Seleccionamos el botón que activará la operación.
+let botonRestar = document.getElementById("botonRestar");
+
+// Registramos la función resta SIN paréntesis:
+// así se ejecuta cuando ocurra el clic y no al cargar la página.
+botonRestar.addEventListener("click", resta);
+
+function resta(event) {
+
+    // Evitamos el envío predeterminado del formulario.
+    event.preventDefault();
+
+    let valor1 = document.getElementById("num1").value;
+    let valor2 = document.getElementById("num2").value;
+
+    // Revisamos que ningún campo esté vacío.
+    if (valor1 === "" || valor2 === "") {
+        alert("Escribe los dos números.");
+        return;
+    }
+
+    let resultado = Number(valor1) - Number(valor2);
+    alert(`Resta: ${resultado}`);
+}</code></pre></figure>
+<div class="probar"><span class="etq">Cómo probarlo</span><p>10 y 3 → «Resta: 7». Un campo vacío → «Escribe los dos números.».</p></div>
+</div>
+<div class="panel" data-panel="e3">
+<h3>Ejercicio 3: Multiplicar (submit, función anónima)</h3>
+<figure class="codigo"><figcaption><span class="ruta">ejercicios/ejercicio3.html</span><button type="button" class="copiar">Copiar</button></figcaption><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Ejercicio 3: Multiplicar dos números&lt;/title&gt;
+    &lt;link rel="stylesheet" href="../css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;a href="../index.html"&gt;&amp;larr; Volver al inicio&lt;/a&gt;
+        &lt;h1&gt;Ejercicio 3: Multiplicar dos números&lt;/h1&gt;
+        &lt;p&gt;Evento submit del formulario con una función anónima.&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;form action="" id="formulario"&gt;
+            &lt;label for="numero1"&gt;Número 1:&lt;/label&gt;
+            &lt;input type="number" id="numero1" step="any" required&gt;
+
+            &lt;label for="numero2"&gt;Número 2:&lt;/label&gt;
+            &lt;input type="number" id="numero2" step="any" required&gt;
+
+            &lt;div class="botones"&gt;
+                &lt;input type="submit" value="Aceptar"&gt;
+                &lt;input type="reset" value="Cancelar"&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/main&gt;
+
+    &lt;script src="../js/ejercicio3.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></figure>
+<figure class="codigo protegido"><figcaption><span class="ruta">js/ejercicio3.js</span><span class="sin-copia">Escríbelo tú</span></figcaption><pre><code>// EJERCICIO 3: función anónima con el evento submit.
+
+// Ahora escuchamos el formulario completo, no el botón.
+document.getElementById("formulario").addEventListener("submit", function (event) {
+
+    // Impedimos que el formulario recargue la página.
+    event.preventDefault();
+
+    // El navegador ya revisó required: aquí los campos tienen valor.
+    let numero1 = Number(document.getElementById("numero1").value);
+    let numero2 = Number(document.getElementById("numero2").value);
+
+    alert(`Multiplicación: ${numero1 * numero2}`);
+});</code></pre></figure>
+<div class="probar"><span class="etq">Cómo probarlo</span><p>6 y 7 → «Multiplicación: 42». Un campo vacío → el aviso lo muestra el navegador, porque <code>submit</code> respeta <code>required</code>.</p></div>
+</div>
+<div class="panel" data-panel="e4">
+<h3>Ejercicio 4: Dividir (submit, función con nombre)</h3>
+<figure class="codigo"><figcaption><span class="ruta">ejercicios/ejercicio4.html</span><button type="button" class="copiar">Copiar</button></figcaption><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Ejercicio 4: Dividir dos números&lt;/title&gt;
+    &lt;link rel="stylesheet" href="../css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;a href="../index.html"&gt;&amp;larr; Volver al inicio&lt;/a&gt;
+        &lt;h1&gt;Ejercicio 4: Dividir dos números&lt;/h1&gt;
+        &lt;p&gt;Evento submit del formulario con una función con nombre.&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;form action="" id="formularioDividir"&gt;
+            &lt;label for="numero11"&gt;Número 1:&lt;/label&gt;
+            &lt;input type="number" id="numero11" step="any" required&gt;
+
+            &lt;label for="numero21"&gt;Número 2:&lt;/label&gt;
+            &lt;input type="number" id="numero21" step="any" required&gt;
+
+            &lt;div class="botones"&gt;
+                &lt;input type="submit" value="Aceptar"&gt;
+                &lt;input type="reset" value="Cancelar"&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/main&gt;
+
+    &lt;script src="../js/ejercicio4.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></figure>
+<figure class="codigo protegido"><figcaption><span class="ruta">js/ejercicio4.js</span><span class="sin-copia">Escríbelo tú</span></figcaption><pre><code>// EJERCICIO 4: función con nombre con el evento submit.
+
+let formularioDividir = document.getElementById("formularioDividir");
+
+// Asociamos la función dividir al envío del formulario.
+formularioDividir.addEventListener("submit", dividir);
+
+function dividir(event) {
+
+    event.preventDefault();
+
+    let numero1 = Number(document.getElementById("numero11").value);
+    let numero2 = Number(document.getElementById("numero21").value);
+
+    // required no puede saber si el divisor es cero: lo revisamos con if.
+    if (numero2 === 0) {
+        alert("No es posible dividir entre cero.");
+        return;
+    }
+
+    alert(`División: ${numero1 / numero2}`);
+}</code></pre></figure>
+<div class="probar"><span class="etq">Cómo probarlo</span><p>7 y 2 → «División: 3.5». 5 y 0 → «No es posible dividir entre cero.».</p></div>
+</div>
+</section>
+<section class="paso guia" id="paso-8" data-titulo="Probar y corregir errores"><p class="eyebrow">Paso 8 de 16 · Guía</p><h2>Probar y corregir errores</h2>
+<p>Cuando algo no funciona, el navegador casi siempre dice por qué. Hay que saber dónde mirar.</p>
+<h3>Abrir la consola</h3>
+<ol class="pasos-cortos">
+<li>Con la página abierta presiona <kbd>F12</kbd> (o clic derecho → <strong>Inspeccionar</strong>).</li>
+<li>Elige la pestaña <strong>Consola</strong> (Console). Los errores aparecen en rojo con el nombre del archivo y el número de línea.</li>
+<li>Haz clic en el nombre del archivo para ver la línea exacta del problema.</li>
+</ol>
+<div class="tabla"><table><thead><tr><th>Lo que ves</th><th>Causa probable</th><th>Cómo corregirlo</th></tr></thead><tbody><tr><td>La página no tiene estilos</td><td>La ruta del CSS está mal</td><td>Desde <code>ejercicios/</code> o <code>taller/</code> usa <code>../css/style.css</code></td></tr><tr><td><code>404 (Not Found)</code> en la consola</td><td>Ruta o nombre de archivo distinto</td><td>Revisa mayúsculas, tildes y espacios en el nombre</td></tr><tr><td>No pasa nada al hacer clic y la consola está vacía</td><td>El script no se cargó</td><td>Revisa la ruta de <code>&lt;script src&gt;</code></td></tr><tr><td><code>Cannot read properties of null</code></td><td>El id no coincide o el script está antes del formulario</td><td>Compara el id del HTML con el de <code>getElementById</code>; pon el script al final del <code>&lt;body&gt;</code></td></tr><tr><td><code>... is not defined</code></td><td>Nombre de variable o función mal escrito</td><td>JavaScript distingue mayúsculas: <code>resta</code> ≠ <code>Resta</code></td></tr><tr><td>La página se recarga y se borra todo</td><td>Falta <code>event.preventDefault()</code></td><td>Agrégalo en la primera línea de la función y recibe <code>event</code></td></tr><tr><td>El resultado sale pegado, como 84</td><td>No se convirtió el texto a número</td><td>Usa <code>Number()</code></td></tr></tbody></table></div>
+<div class="nota info"><p><strong>Truco:</strong> Puedes escribir <code>console.log(valor1);</code> dentro de la función para ver en la consola qué valor llega de un campo. Bórralo cuando termines.</p></div>
+<div class="probar"><span class="etq">Cómo probarlo</span><p>Abre los cuatro ejercicios desde el inicio con la consola abierta. No debe aparecer ningún mensaje rojo.</p></div>
+</section>
+<section class="paso guia" id="paso-9" data-titulo="Herramientas para el taller"><p class="eyebrow">Paso 9 de 16 · Guía</p><h2>Herramientas para el taller</h2>
+<p>El taller usa algunas instrucciones nuevas. Léelas antes de empezar; cada ejercicio indica cuáles necesita.</p>
+
+<h3>1. Mostrar mensajes en la página en vez de <code>alert()</code></h3>
+<figure class="codigo protegido"><figcaption><span class="ruta sin">fragmento</span><span class="sin-copia">Escríbelo tú</span></figcaption><pre><code>let resultado = document.getElementById("resultado");
+
+resultado.textContent = "El número 8 es par.";   // escribe el texto
+resultado.className = "mensaje exito";            // verde
+
+resultado.textContent = "Escribe un número.";
+resultado.className = "mensaje error";            // rojo</code></pre></figure>
+<p><code>textContent</code> cambia el texto de un elemento. <code>className</code> cambia sus clases: <code>exito</code> y <code>error</code> ya están definidas en <code>style.css</code>.</p>
+
+<h3>2. <code>if</code>, <code>else if</code> y <code>else</code></h3>
+<figure class="codigo protegido"><figcaption><span class="ruta sin">fragmento</span><span class="sin-copia">Escríbelo tú</span></figcaption><pre><code>if (nota &gt;= 4.5) {
+    // se ejecuta si la primera condición es verdadera
+} else if (nota &gt;= 3.0) {
+    // solo se revisa si la anterior fue falsa
+} else {
+    // se ejecuta si ninguna condición fue verdadera
+}</code></pre></figure>
+<p>Las condiciones se revisan en orden y solo se ejecuta el primer bloque verdadero.</p>
+
+<h3>3. Operadores de comparación y lógicos</h3>
+<div class="tabla"><table><thead><tr><th>Operador</th><th>Significa</th><th>Ejemplo</th></tr></thead><tbody><tr><td><code>===</code> / <code>!==</code></td><td>igual / distinto (valor y tipo)</td><td><code>clave !== confirmar</code></td></tr><tr><td><code>&gt;</code> <code>&lt;</code> <code>&gt;=</code> <code>&lt;=</code></td><td>mayor, menor, mayor o igual, menor o igual</td><td><code>edad &gt;= 18</code></td></tr><tr><td><code>&amp;&amp;</code></td><td>Y: las dos condiciones deben cumplirse</td><td><code>a &gt;= b &amp;&amp; a &gt;= c</code></td></tr><tr><td><code>||</code></td><td>O: basta con que una se cumpla</td><td><code>nota &lt; 0 || nota &gt; 5</code></td></tr><tr><td><code>!</code></td><td>NO: invierte la condición</td><td><code>!correo.includes("@")</code></td></tr><tr><td><code>%</code></td><td>residuo de una división</td><td><code>10 % 2</code> da <code>0</code>; <code>7 % 2</code> da <code>1</code></td></tr></tbody></table></div>
+
+<h3>4. Validar números y texto</h3>
+<figure class="codigo protegido"><figcaption><span class="ruta sin">fragmento</span><span class="sin-copia">Escríbelo tú</span></figcaption><pre><code>Number.isInteger(7);          // true: es entero
+Number.isInteger(7.5);        // false
+
+let nombre = document.getElementById("nombre").value.trim();
+// trim() quita los espacios del inicio y del final: "  Ana " → "Ana"
+
+nombre.length;                // cantidad de caracteres: 3
+"ana@correo.com".includes("@"); // true: el texto contiene "@"</code></pre></figure>
+
+<h3>5. <code>switch</code></h3>
+<figure class="codigo protegido"><figcaption><span class="ruta sin">fragmento</span><span class="sin-copia">Escríbelo tú</span></figcaption><pre><code>switch (operacion) {
+    case "suma":
+        r = a + b;
+        break;          // sale del switch
+    case "resta":
+        r = a - b;
+        break;
+    default:
+        // si no coincidió ningún case
+}</code></pre></figure>
+<p><code>switch</code> compara una variable con varios valores exactos. Conviene cuando hay muchas opciones fijas, como las de un <code>&lt;select&gt;</code>. Sin <code>break</code>, la ejecución sigue con el siguiente <code>case</code>.</p>
+
+<h3>6. <code>novalidate</code> y <code>return</code></h3>
+<ul>
+<li>En el taller los formularios llevan <code>novalidate</code>: el navegador <strong>no</strong> revisa los campos y tú haces <strong>todas</strong> las validaciones con <code>if</code>. Así practicas las condicionales.</li>
+<li>Después de mostrar un error usa <code>return;</code> para detener la función. Así solo se muestra un mensaje a la vez y no se calcula con datos incorrectos.</li>
+</ul>
+</section>
+<section class="paso guia" id="paso-10" data-titulo="Plantilla base del taller"><p class="eyebrow">Paso 10 de 16 · Guía</p><h2>Plantilla base del taller</h2>
+<p>Los cinco ejercicios del taller tienen la misma forma. Empieza creando el Taller 1 con esta plantilla y úsala como base para los demás.</p>
+<h3>Crea estos archivos</h3>
+<p>En <code>taller/</code>: <code>taller1.html</code> a <code>taller5.html</code>. En <code>js/</code>: <code>taller1.js</code> a <code>taller5.js</code>.</p>
+<figure class="codigo"><figcaption><span class="ruta">taller/taller1.html</span><button type="button" class="copiar">Copiar</button></figcaption><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Taller 1: Par o impar&lt;/title&gt;
+    &lt;link rel="stylesheet" href="../css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;a href="../index.html"&gt;&amp;larr; Volver al inicio&lt;/a&gt;
+        &lt;h1&gt;Taller 1: Par o impar&lt;/h1&gt;
+        &lt;p&gt;Escribe un número entero y descubre si es par o impar.&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;form id="formTaller1" novalidate&gt;
+            &lt;label for="numero"&gt;Número entero:&lt;/label&gt;
+            &lt;input type="number" id="numero" step="any"&gt;
+
+            &lt;div class="botones"&gt;
+                &lt;input type="submit" value="Verificar"&gt;
+                &lt;input type="reset" value="Limpiar"&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+
+        &lt;!-- Aquí se mostrarán los mensajes de error y el resultado --&gt;
+        &lt;p id="resultado" class="mensaje"&gt;&lt;/p&gt;
+    &lt;/main&gt;
+
+    &lt;script src="../js/taller1.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></figure>
+<figure class="codigo protegido"><figcaption><span class="ruta">js/taller1.js</span><span class="estado">Plantilla: completa los pasos 3, 4 y 5</span><span class="sin-copia">Escríbelo tú</span></figcaption><pre><code>// TALLER 1: Par o impar.
+
+// 1. Seleccionamos el formulario y el párrafo de resultados.
+let formulario = document.getElementById("formTaller1");
+let resultado = document.getElementById("resultado");
+
+// 2. Escuchamos el envío del formulario.
+formulario.addEventListener("submit", function (event) {
+
+    // Evitamos que la página se recargue.
+    event.preventDefault();
+
+    // 3. Obtener el valor del campo.
+    // Escribe aquí tu código.
+
+    // 4. Validar. Si algo está mal: mostrar el error y usar return.
+    // Escribe aquí tu código.
+
+    // 5. Si todo está bien: calcular y mostrar el resultado.
+    // Escribe aquí tu código.
+});</code></pre></figure>
+<h3>Reglas para todo el taller</h3>
+<ul class="reglas">
+<li>Escucha el evento <code>submit</code> del formulario y usa <code>event.preventDefault()</code>.</li>
+<li>El formulario lleva <code>novalidate</code>; todas las validaciones se hacen con <code>if</code>.</li>
+<li>No uses <code>alert()</code>. Muestra cada mensaje en <code>&lt;p id="resultado"&gt;</code> con la clase <code>error</code> o <code>exito</code>.</li>
+<li>Valida en el orden que indica cada ejercicio y usa <code>return</code> después de cada error.</li>
+<li>Comenta tu código para explicar qué hace cada bloque.</li>
+</ul>
+<h3>Para los talleres 2 a 5</h3>
+<p>Copia <code>taller1.html</code> y cambia: <code>&lt;title&gt;</code>, <code>&lt;h1&gt;</code> y descripción; el <code>id</code> del formulario (<code>formTaller2</code>, <code>formTaller3</code>…); los campos del formulario según la tabla de cada ejercicio; y la ruta del script (<code>../js/taller2.js</code>…).</p>
+<div class="probar"><span class="etq">Cómo probarlo</span><p>Abre el Taller 1 desde el inicio. Debe verse el formulario con estilos, y la consola no debe mostrar errores aunque el botón todavía no haga nada.</p></div>
+</section>
+<section class="paso taller" id="paso-11" data-titulo="Taller 1: Par o impar"><p class="eyebrow">Paso 11 de 16 · Taller</p><h2>Taller 1: Par o impar</h2><p class="lead">Lee un número entero y muestra si es par o impar.</p><div class="chips"><span class="chip">if / else</span><span class="chip">%</span><span class="chip">Number.isInteger()</span><span class="chip">textContent</span></div><h3>Formulario</h3><div class="tabla"><table><thead><tr><th>Etiqueta</th><th>Tipo</th><th>id</th></tr></thead><tbody><tr><td>Número entero</td><td><code>number</code></td><td><code>numero</code></td></tr></tbody></table></div><p><strong>Función:</strong> anónima, escrita dentro de <code>addEventListener</code> (como en la plantilla). Formulario: <code>formTaller1</code>.</p><h3>Validaciones, en este orden</h3><ol><li>Si el campo está vacío → <span class="m er">Escribe un número.</span></li><li>Si el número no es entero → <span class="m er">Escribe un número entero.</span></li></ol><h3>Si todo es válido</h3><p>Muestra con la clase <code>exito</code>: «El número 8 es par.» o «El número 7 es impar.»</p><h3>Casos de prueba</h3><p>Tu programa debe dar exactamente estos resultados.</p><div class="tabla"><table><thead><tr><th>Entrada</th><th>Mensaje esperado</th></tr></thead><tbody><tr><td>(vacío)</td><td><span class="m er">Escribe un número.</span></td></tr><tr><td>4.5</td><td><span class="m er">Escribe un número entero.</span></td></tr><tr><td>8</td><td><span class="m ok">El número 8 es par.</span></td></tr><tr><td>-3</td><td><span class="m ok">El número -3 es impar.</span></td></tr><tr><td>0</td><td><span class="m ok">El número 0 es par.</span></td></tr></tbody></table></div><div class="nota info"><p><strong>Pista:</strong> Revisa el vacío con el texto del campo (<code>valor === ""</code>) antes de convertir con <code>Number()</code>. Para saber si es par compara con <code>numero % 2 === 0</code>: en JavaScript <code>-3 % 2</code> da <code>-1</code>, no <code>1</code>.</p></div></section>
+<section class="paso taller" id="paso-12" data-titulo="Taller 2: Clasificar una nota"><p class="eyebrow">Paso 12 de 16 · Taller</p><h2>Taller 2: Clasificar una nota</h2><p class="lead">Lee una nota de 0.0 a 5.0 y muestra su desempeño y si aprueba.</p><div class="chips"><span class="chip">if / else if / else</span><span class="chip">||</span><span class="chip">función con nombre</span></div><h3>Formulario</h3><div class="tabla"><table><thead><tr><th>Etiqueta</th><th>Tipo</th><th>id</th></tr></thead><tbody><tr><td>Nota (0.0 a 5.0)</td><td><code>number</code></td><td><code>nota</code></td></tr></tbody></table></div><p><strong>Función:</strong> con nombre: <code>clasificarNota</code>, registrada con <code>addEventListener("submit", clasificarNota)</code>. Formulario: <code>formTaller2</code>.</p><h3>Validaciones, en este orden</h3><ol><li>Si el campo está vacío → <span class="m er">Escribe la nota.</span></li><li>Si la nota es menor que 0 o mayor que 5 → <span class="m er">La nota debe estar entre 0.0 y 5.0.</span></li></ol><h3>Si todo es válido</h3><p>Clasifica la nota y muéstrala con la clase <code>exito</code>:<div class="tabla"><table><thead><tr><th>Nota</th><th>Desempeño</th><th>Resultado</th></tr></thead><tbody><tr><td>4.5 a 5.0</td><td>Excelente</td><td>Aprobado</td></tr><tr><td>4.0 a 4.4</td><td>Bueno</td><td>Aprobado</td></tr><tr><td>3.0 a 3.9</td><td>Aceptable</td><td>Aprobado</td></tr><tr><td>menor que 3.0</td><td>Insuficiente</td><td>No aprobado</td></tr></tbody></table></div>Formato del mensaje: «Nota 4.8: Excelente. Aprobado.»</p><h3>Casos de prueba</h3><p>Tu programa debe dar exactamente estos resultados.</p><div class="tabla"><table><thead><tr><th>Entrada</th><th>Mensaje esperado</th></tr></thead><tbody><tr><td>(vacío)</td><td><span class="m er">Escribe la nota.</span></td></tr><tr><td>5.5</td><td><span class="m er">La nota debe estar entre 0.0 y 5.0.</span></td></tr><tr><td>-1</td><td><span class="m er">La nota debe estar entre 0.0 y 5.0.</span></td></tr><tr><td>4.8</td><td><span class="m ok">Nota 4.8: Excelente. Aprobado.</span></td></tr><tr><td>4</td><td><span class="m ok">Nota 4: Bueno. Aprobado.</span></td></tr><tr><td>3</td><td><span class="m ok">Nota 3: Aceptable. Aprobado.</span></td></tr><tr><td>2.9</td><td><span class="m ok">Nota 2.9: Insuficiente. No aprobado.</span></td></tr></tbody></table></div><div class="nota info"><p><strong>Pista:</strong> Ordena las condiciones de la nota más alta a la más baja: <code>if (nota &gt;= 4.5)</code>, luego <code>else if (nota &gt;= 4.0)</code>… Así cada condición solo necesita un límite. Para el rango usa <code>||</code>.</p></div><div class="nota reto"><p><strong>Reto extra:</strong> Usa <code>nota.toFixed(1)</code> para que el mensaje siempre muestre un decimal: «Nota 4.0: Bueno. Aprobado.»</p></div></section>
+<section class="paso taller" id="paso-13" data-titulo="Taller 3: El mayor de tres números"><p class="eyebrow">Paso 13 de 16 · Taller</p><h2>Taller 3: El mayor de tres números</h2><p class="lead">Lee tres números y muestra cuál es el mayor, o avisa si los tres son iguales.</p><div class="chips"><span class="chip">&&</span><span class="chip">||</span><span class="chip">if / else if / else</span><span class="chip">comparaciones</span></div><h3>Formulario</h3><div class="tabla"><table><thead><tr><th>Etiqueta</th><th>Tipo</th><th>id</th></tr></thead><tbody><tr><td>Número A</td><td><code>number</code></td><td><code>numeroA</code></td></tr><tr><td>Número B</td><td><code>number</code></td><td><code>numeroB</code></td></tr><tr><td>Número C</td><td><code>number</code></td><td><code>numeroC</code></td></tr></tbody></table></div><p><strong>Función:</strong> anónima. Formulario: <code>formTaller3</code>. No uses <code>Math.max()</code>: el objetivo es practicar condicionales.</p><h3>Validaciones, en este orden</h3><ol><li>Si cualquiera de los tres campos está vacío → <span class="m er">Completa los tres números.</span></li></ol><h3>Si todo es válido</h3><p>Si los tres son iguales, muestra «Los tres números son iguales.». Si no, muestra «El número mayor es 9.». Ambos con la clase <code>exito</code>.</p><h3>Casos de prueba</h3><p>Tu programa debe dar exactamente estos resultados.</p><div class="tabla"><table><thead><tr><th>Entrada</th><th>Mensaje esperado</th></tr></thead><tbody><tr><td>3, 9, 2</td><td><span class="m ok">El número mayor es 9.</span></td></tr><tr><td>-1, -7, -3</td><td><span class="m ok">El número mayor es -1.</span></td></tr><tr><td>8, 8, 1</td><td><span class="m ok">El número mayor es 8.</span></td></tr><tr><td>5, 5, 5</td><td><span class="m ok">Los tres números son iguales.</span></td></tr><tr><td>4, (vacío), 6</td><td><span class="m er">Completa los tres números.</span></td></tr></tbody></table></div><div class="nota info"><p><strong>Pista:</strong> Para los vacíos une tres comparaciones con <code>||</code>. Para el mayor: <code>if (a &gt;= b &amp;&amp; a &gt;= c)</code> el mayor es <code>a</code>; si no, compara <code>b</code> con los otros dos; si tampoco, es <code>c</code>. Revisa primero el caso de los tres iguales.</p></div></section>
+<section class="paso taller" id="paso-14" data-titulo="Taller 4: Formulario de registro"><p class="eyebrow">Paso 14 de 16 · Taller</p><h2>Taller 4: Formulario de registro</h2><p class="lead">Valida los datos de registro de un usuario y muestra el primer error que encuentre.</p><div class="chips"><span class="chip">varios if con return</span><span class="chip">trim()</span><span class="chip">length</span><span class="chip">includes()</span><span class="chip">!==</span></div><h3>Formulario</h3><div class="tabla"><table><thead><tr><th>Etiqueta</th><th>Tipo</th><th>id</th></tr></thead><tbody><tr><td>Nombre</td><td><code>text</code></td><td><code>nombre</code></td></tr><tr><td>Edad</td><td><code>number</code></td><td><code>edad</code></td></tr><tr><td>Correo</td><td><code>email</code></td><td><code>correo</code></td></tr><tr><td>Contraseña</td><td><code>password</code></td><td><code>clave</code></td></tr><tr><td>Confirmar contraseña</td><td><code>password</code></td><td><code>confirmar</code></td></tr></tbody></table></div><p><strong>Función:</strong> con nombre: <code>validarRegistro</code>. Formulario: <code>formTaller4</code>.</p><h3>Validaciones, en este orden</h3><ol><li>Nombre vacío (después de <code>trim()</code>) → <span class="m er">Escribe tu nombre.</span></li><li>Nombre con menos de 3 caracteres → <span class="m er">El nombre debe tener al menos 3 caracteres.</span></li><li>Edad vacía → <span class="m er">Escribe tu edad.</span></li><li>Edad no entera, menor que 18 o mayor que 100 → <span class="m er">La edad debe ser un número entero entre 18 y 100.</span></li><li>Correo sin <code>@</code> o sin <code>.</code> → <span class="m er">Escribe un correo válido.</span></li><li>Contraseña con menos de 8 caracteres → <span class="m er">La contraseña debe tener al menos 8 caracteres.</span></li><li>Confirmación distinta de la contraseña → <span class="m er">Las contraseñas no coinciden.</span></li></ol><h3>Si todo es válido</h3><p>Muestra con la clase <code>exito</code>: «Registro exitoso. Bienvenido(a), Ana.» usando el nombre escrito.</p><h3>Casos de prueba</h3><p>Tu programa debe dar exactamente estos resultados.</p><div class="tabla"><table><thead><tr><th>Entrada</th><th>Mensaje esperado</th></tr></thead><tbody><tr><td>Nombre: (vacío)</td><td><span class="m er">Escribe tu nombre.</span></td></tr><tr><td>Nombre: Al</td><td><span class="m er">El nombre debe tener al menos 3 caracteres.</span></td></tr><tr><td>Nombre: Ana · Edad: (vacío)</td><td><span class="m er">Escribe tu edad.</span></td></tr><tr><td>Edad: 16</td><td><span class="m er">La edad debe ser un número entero entre 18 y 100.</span></td></tr><tr><td>Edad: 20 · Correo: ana.correo.com</td><td><span class="m er">Escribe un correo válido.</span></td></tr><tr><td>Correo: ana@correo.com · Contraseña: 1234</td><td><span class="m er">La contraseña debe tener al menos 8 caracteres.</span></td></tr><tr><td>Contraseña: secreta123 · Confirmar: secreta12</td><td><span class="m er">Las contraseñas no coinciden.</span></td></tr><tr><td>Ana · 20 · ana@correo.com · secreta123 · secreta123</td><td><span class="m ok">Registro exitoso. Bienvenido(a), Ana.</span></td></tr></tbody></table></div><div class="nota info"><p><strong>Pista:</strong> Cada validación es un <code>if</code> independiente con su <code>return</code>, uno debajo del otro. Aplica <code>trim()</code> al nombre y al correo, pero no a las contraseñas: un espacio puede ser parte de ellas.</p></div><div class="nota reto"><p><strong>Reto extra:</strong> Agrega una casilla «Acepto los términos» (<code>type="checkbox"</code>, id <code>terminos</code>) y valida que esté marcada con <code>document.getElementById("terminos").checked</code>.</p></div></section>
+<section class="paso taller" id="paso-15" data-titulo="Taller 5: Calculadora con selector"><p class="eyebrow">Paso 15 de 16 · Taller</p><h2>Taller 5: Calculadora con selector</h2><p class="lead">Une los cuatro ejercicios guiados en una sola calculadora: el usuario escribe dos números y elige la operación en un selector.</p><div class="chips"><span class="chip">switch</span><span class="chip">select</span><span class="chip">if</span><span class="chip">return</span></div><h3>Formulario</h3><div class="tabla"><table><thead><tr><th>Etiqueta</th><th>Tipo</th><th>id</th></tr></thead><tbody><tr><td>Primer número</td><td><code>number</code></td><td><code>primero</code></td></tr><tr><td>Segundo número</td><td><code>number</code></td><td><code>segundo</code></td></tr><tr><td>Operación</td><td><code>select</code></td><td><code>operacion</code></td></tr></tbody></table></div><p><strong>Función:</strong> con nombre: <code>calcular</code>. Formulario: <code>formTaller5</code>. Usa <code>switch</code> para elegir la operación.</p><figure class="codigo"><figcaption><span class="ruta">taller/taller5.html</span><span class="estado">Así se escribe el selector</span><button type="button" class="copiar">Copiar</button></figcaption><pre><code>&lt;label for="operacion"&gt;Operación:&lt;/label&gt;
+&lt;select id="operacion"&gt;
+    &lt;option value=""&gt;Selecciona una operación&lt;/option&gt;
+    &lt;option value="suma"&gt;Suma (+)&lt;/option&gt;
+    &lt;option value="resta"&gt;Resta (−)&lt;/option&gt;
+    &lt;option value="multiplicacion"&gt;Multiplicación (×)&lt;/option&gt;
+    &lt;option value="division"&gt;División (÷)&lt;/option&gt;
+&lt;/select&gt;</code></pre></figure><h3>Validaciones, en este orden</h3><ol><li>Algún número vacío → <span class="m er">Escribe los dos números.</span></li><li>Operación sin elegir (valor <code>""</code>) → <span class="m er">Selecciona una operación.</span></li><li>División con segundo número 0 → <span class="m er">No es posible dividir entre cero.</span></li></ol><h3>Si todo es válido</h3><p>Muestra con la clase <code>exito</code> la operación completa: «8 × 2 = 16».</p><h3>Casos de prueba</h3><p>Tu programa debe dar exactamente estos resultados.</p><div class="tabla"><table><thead><tr><th>Entrada</th><th>Mensaje esperado</th></tr></thead><tbody><tr><td>8, 2, (sin elegir)</td><td><span class="m er">Selecciona una operación.</span></td></tr><tr><td>8, 2, Suma</td><td><span class="m ok">8 + 2 = 10</span></td></tr><tr><td>8, 2, Resta</td><td><span class="m ok">8 - 2 = 6</span></td></tr><tr><td>8, 2, Multiplicación</td><td><span class="m ok">8 × 2 = 16</span></td></tr><tr><td>7, 2, División</td><td><span class="m ok">7 ÷ 2 = 3.5</span></td></tr><tr><td>8, 0, División</td><td><span class="m er">No es posible dividir entre cero.</span></td></tr><tr><td>(vacío), 2, Suma</td><td><span class="m er">Escribe los dos números.</span></td></tr></tbody></table></div><div class="nota info"><p><strong>Pista:</strong> El valor del selector se lee igual que un input: <code>document.getElementById("operacion").value</code>. La validación de la división entre cero puede ir dentro del <code>case "division"</code>, con su propio <code>return</code>.</p></div></section>
+<section class="paso guia" id="paso-16" data-titulo="Lista de verificación"><p class="eyebrow">Paso 16 de 16 · Guía</p><h2>Lista de verificación</h2><p>Revisa cada punto antes de entregar. Marca las casillas a medida que los compruebes.</p><ul class="checklist"><li><input type="checkbox" id="chk0"><label for="chk0">La estructura de carpetas coincide con el árbol del paso 3.</label></li><li><input type="checkbox" id="chk1"><label for="chk1">Los nombres de archivos están en minúsculas, sin espacios ni tildes.</label></li><li><input type="checkbox" id="chk2"><label for="chk2">Todas las páginas se ven con estilos (cargan <code>style.css</code>).</label></li><li><input type="checkbox" id="chk3"><label for="chk3">Los nueve enlaces de <code>index.html</code> abren su página y cada página vuelve al inicio.</label></li><li><input type="checkbox" id="chk4"><label for="chk4">La consola (<kbd>F12</kbd>) no muestra errores en rojo en ninguna página.</label></li><li><input type="checkbox" id="chk5"><label for="chk5">Cada ejercicio del taller da exactamente los mensajes de sus casos de prueba.</label></li><li><input type="checkbox" id="chk6"><label for="chk6">El taller no usa <code>alert()</code>; los mensajes aparecen en <code>#resultado</code> con su color.</label></li><li><input type="checkbox" id="chk7"><label for="chk7">El código tiene comentarios que explican cada bloque.</label></li></ul><h3>Preguntas de comprobación</h3><ol><li>¿Por qué <code>index.html</code> enlaza <code>css/style.css</code> y <code>ejercicio1.html</code> enlaza <code>../css/style.css</code>?</li><li>¿Qué ventaja tiene que cada ejercicio tenga su propio archivo JavaScript?</li><li>¿Por qué los formularios del taller llevan <code>novalidate</code>?</li><li>¿Qué pasaría en el Taller 4 si quitas los <code>return</code> después de cada error?</li><li>¿Cuándo conviene usar <code>switch</code> en lugar de <code>if</code> / <code>else if</code>?</li></ol></section>
+
+    <div class="nav">
+      <button type="button" id="anterior">← Anterior</button>
+      <button type="button" class="sig" id="siguiente">Siguiente →</button>
+    </div>
+  </div>
+</main>
+
+<script>
+(function () {
+  var pasos = Array.prototype.slice.call(document.querySelectorAll(".paso"));
+  var total = pasos.length, i = 0;
+  var cont = document.getElementById("contador"), act = document.getElementById("actual");
+  var barra = document.getElementById("progreso");
+  var ant = document.getElementById("anterior"), sig = document.getElementById("siguiente");
+  var indice = document.querySelectorAll("[data-ir]");
+
+  function mostrar(n, desplazar) {
+    i = Math.max(0, Math.min(total - 1, n));
+    pasos.forEach(function (p, k) { p.hidden = k !== i; });
+    cont.textContent = "Paso " + (i + 1) + " de " + total;
+    act.textContent = pasos[i].getAttribute("data-titulo");
+    barra.style.width = ((i + 1) / total * 100) + "%";
+    ant.disabled = i === 0;
+    var ultimo = i === total - 1;
+    sig.textContent = ultimo ? "✓ Guía completada" : "Siguiente →";
+    sig.disabled = ultimo;
+    indice.forEach(function (b) {
+      if (+b.getAttribute("data-ir") === i) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current");
+    });
+    try { history.replaceState(null, "", "#paso-" + (i + 1)); } catch (e) {}
+    if (desplazar) document.querySelector("main").scrollIntoView({ block: "start" });
+  }
+  ant.addEventListener("click", function () { mostrar(i - 1, true); });
+  sig.addEventListener("click", function () { mostrar(i + 1, true); });
+  indice.forEach(function (b) {
+    b.addEventListener("click", function () {
+      mostrar(+b.getAttribute("data-ir"), true);
+      var d = b.closest("details"); if (d) d.open = false;
+    });
+  });
+  var m = /^#paso-(\d+)$/.exec(location.hash || "");
+  mostrar(m ? +m[1] - 1 : 0, false);
+
+  // Pestañas (paso 7)
+  document.querySelectorAll(".pestanas").forEach(function (grupo) {
+    var bts = grupo.querySelectorAll("button");
+    var cont = grupo.parentNode;
+    function activar(id) {
+      bts.forEach(function (b) { b.setAttribute("aria-selected", b.getAttribute("data-tab") === id ? "true" : "false"); });
+      cont.querySelectorAll(".panel").forEach(function (p) { p.hidden = p.getAttribute("data-panel") !== id; });
+    }
+    bts.forEach(function (b) { b.addEventListener("click", function () { activar(b.getAttribute("data-tab")); }); });
+    activar(bts[0].getAttribute("data-tab"));
+  });
+
+  // Copiar código
+  document.querySelectorAll(".copiar").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var code = b.closest(".codigo").querySelector("code");
+      var texto = code.textContent;
+      function hecho(t) { b.textContent = t; setTimeout(function () { b.textContent = "Copiar"; }, 1600); }
+      function seleccionar() {
+        var r = document.createRange(); r.selectNodeContents(code);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        hecho("Seleccionado: Ctrl+C");
+      }
+      try {
+        navigator.clipboard.writeText(texto).then(function () { hecho("Copiado"); }, seleccionar);
+      } catch (e) { seleccionar(); }
+    });
+  });
+
+  // Código JavaScript sin opción de copiar
+  document.querySelectorAll(".protegido").forEach(function (f) {
+    ["copy", "cut", "contextmenu", "dragstart"].forEach(function (ev) {
+      f.addEventListener(ev, function (e) { e.preventDefault(); });
+    });
+  });
+
+  // Lista de verificación (se recuerda en este navegador)
+  document.querySelectorAll(".checklist input").forEach(function (c) {
+    try { c.checked = localStorage.getItem("eventosjs-" + c.id) === "1"; } catch (e) {}
+    c.addEventListener("change", function () {
+      try { localStorage.setItem("eventosjs-" + c.id, c.checked ? "1" : "0"); } catch (e) {}
+    });
+  });
+})();
+</script>
+
+</body></html>
