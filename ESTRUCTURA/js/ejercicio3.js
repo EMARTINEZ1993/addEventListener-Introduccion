@@ -7,8 +7,8 @@ document.getElementById("formulario").addEventListener("submit", function (event
     event.preventDefault();
 
     // El navegador ya revisó required: aquí los campos tienen valor.
-    let numero1 = Number(document.getElementById("numero1").value);
-    let numero2 = Number(document.getElementById("numero2").value);
+    let numero1 = Number(document.getElementById("num1").value);
+    let numero2 = Number(document.getElementById("num2").value);
 
     alert(`Multiplicación: ${numero1 * numero2}`);
 });

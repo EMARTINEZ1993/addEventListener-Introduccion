@@ -1,26 +1,29 @@
-// EJERCICIO 2: función con nombre con el evento click.
 
-// Seleccionamos el botón que activará la operación.
+// EJERCICIO 2: Uso de una función con nombre y el evento click.
+
+// Seleccionamos el botón mediante su id y guardamos en una variable
 let botonRestar = document.getElementById("botonRestar");
 
-// Registramos la función resta SIN paréntesis:
-// así se ejecuta cuando ocurra el clic y no al cargar la página.
+// Le asignamos el evento click y la función que debe ejecutar cuando ocurra.
 botonRestar.addEventListener("click", resta);
 
+// Declaramos una función con nombre que recibe el objeto event.
+// Este objeto proporciona información sobre el evento que ocurrió.
 function resta(event) {
 
-    // Evitamos el envío predeterminado del formulario.
     event.preventDefault();
 
-    let valor1 = document.getElementById("num1").value;
-    let valor2 = document.getElementById("num2").value;
+    // parseFloat() admite decimales (a diferencia de parseInt(), que los recorta)
+    // y da NaN si el campo está vacío.
+    let valor1 = parseFloat(document.getElementById("num1").value);
+    let valor2 = parseFloat(document.getElementById("num2").value);
 
-    // Revisamos que ningún campo esté vacío.
-    if (valor1 === "" || valor2 === "") {
+    if (isNaN(valor1) || isNaN(valor2)) {
         alert("Escribe los dos números.");
         return;
-    }
 
-    let resultado = Number(valor1) - Number(valor2);
-    alert(`Resta: ${resultado}`);
+    } else {
+        let resultado = valor1 - valor2;
+        alert(`Resta: ${resultado}`);
+    }
 }

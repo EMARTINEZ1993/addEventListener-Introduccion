@@ -1,25 +1,35 @@
-// EJERCICIO 1: función anónima con el evento click.
 
-// Seleccionamos el botón por su id y registramos la función
-// que se ejecutará cuando el usuario haga clic.
+// EJERCICIO 1: Uso de una función anónima y el evento click.
+
+// Seleccionamos el botón mediante su id y utilizamos
+// addEventListener() para ejecutar una función cuando se haga clic.
 document.getElementById("botonSumar").addEventListener("click", function (event) {
 
-    // Evitamos que el formulario se envíe y recargue la página.
+    // Evitamos el comportamiento predeterminado del formulario,
+    // como enviar los datos y recargar la página.
     event.preventDefault();
 
-    // Obtenemos los valores escritos en los campos (llegan como texto).
-    let valor1 = document.getElementById("n1").value;
-    let valor2 = document.getElementById("n2").value;
+    // Obtenemos los valores ingresados por el usuario en los campos n1 y n2.
+    // Un input siempre entrega su valor como texto, aunque sea de tipo "number".
+    // Usamos parseFloat() para convertirlo en número: a diferencia de parseInt(),
+    // no recorta los decimales (parseFloat("2.5") da 2.5, parseInt("2.5") daría 2).
+    let valor1 = parseFloat(document.getElementById("n1").value);
+    let valor2 = parseFloat(document.getElementById("n2").value);
 
-    // Al escuchar el clic, required no valida: revisamos los vacíos con if.
-    if (valor1 === "" || valor2 === "") {
+    // Verificamos si alguno de los valores ingresados no es un número válido.
+    // isNaN() devuelve true cuando el resultado de la conversión no es un número;
+    // esto también detecta un campo vacío, porque parseFloat("") da NaN.
+    if (isNaN(valor1) || isNaN(valor2)) {
+
+        // Mostramos un mensaje para solicitar que se ingresen los dos números.
         alert("Escribe los dos números.");
+
+        // Detenemos la ejecución de la función para evitar continuar.
         return;
+
+    } else {
+
+        // Sumamos los dos valores y mostramos el resultado en una ventana emergente.
+        alert(`Suma: ${valor1 + valor2}`);
     }
-
-    // Convertimos el texto a número y mostramos la suma.
-    let n1 = Number(valor1);
-    let n2 = Number(valor2);
-
-    alert(`Suma: ${n1 + n2}`);
 });

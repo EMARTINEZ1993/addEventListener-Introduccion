@@ -13,11 +13,46 @@ function validarRegistro(event) {
     event.preventDefault();
 
     // 3. Obtener los valores de los campos.
-    // Escribe aquí tu código.
+    let nombre = document.getElementById("nombre").value.trim();
+    let edad = document.getElementById("edad").value;
+    let correo = document.getElementById("correo").value.trim();
+    let clave = document.getElementById("clave").value;
+    let confirmar = document.getElementById("confirmar").value;
 
     // 4. Validar en el orden indicado. Si algo está mal: mostrar el error y usar return.
-    // Escribe aquí tu código.
+    if (nombre === "") {
+        resultado.textContent = "Escribe tu nombre.";
+        resultado.className = "mensaje error";
+        return;
+    }
 
-    // 5. Si todo está bien: calcular y mostrar el resultado.
-    // Escribe aquí tu código.
+    if (edad === "") {
+        resultado.textContent = "Escribe tu edad.";
+        resultado.className = "mensaje error";
+        return;
+    }
+
+    let edadNumero = Number(edad);
+
+    if (!Number.isInteger(edadNumero) || edadNumero < 18 || edadNumero > 100) {
+        resultado.textContent = "La edad debe ser un número entero entre 18 y 100.";
+        resultado.className = "mensaje error";
+        return;
+    }
+
+    if (!correo.includes("@") || !correo.includes(".")) {
+        resultado.textContent = "Escribe un correo válido.";
+        resultado.className = "mensaje error";
+        return;
+    }
+
+    if (confirmar !== clave) {
+        resultado.textContent = "Las contraseñas no coinciden.";
+        resultado.className = "mensaje error";
+        return;
+    }
+
+    // 5. Si todo está bien: mostrar el resultado.
+    resultado.textContent = `Registro exitoso. Bienvenido(a), ${nombre}.`;
+    resultado.className = "mensaje exito";
 }

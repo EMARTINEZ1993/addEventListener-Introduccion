@@ -9,14 +9,20 @@ function dividir(event) {
 
     event.preventDefault();
 
-    let numero1 = Number(document.getElementById("numero11").value);
-    let numero2 = Number(document.getElementById("numero21").value);
+    // parseFloat() admite decimales (a diferencia de parseInt(), que los recorta).
+    let numero1 = parseFloat(document.getElementById("num1").value);
+    let numero2 = parseFloat(document.getElementById("num2").value);
 
     // required no puede saber si el divisor es cero: lo revisamos con if.
     if (numero2 === 0) {
         alert("No es posible dividir entre cero.");
         return;
     }
-
-    alert(`División: ${numero1 / numero2}`);
+    else if (isNaN(numero1) || isNaN(numero2)) {
+        alert("Escribe los dos números.");
+        return;
+    }
+    else {
+        alert(`División: ${numero1 / numero2}`);
+    }
 }
